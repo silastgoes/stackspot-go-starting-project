@@ -1,11 +1,7 @@
-## StackSpot Plugin
+## StackSpot Go Starter project
 
-## Jinja
+Projeto iniciado pelo plugin [go-starting-project](https://github.com/silastgoes/stackspot-go-starting-project)
 
-You can use jinja to make a template-data folder more dynamic.
+## {{project_name}}
 
-complete documentation of jinja: https://jinja.palletsprojects.com/en/3.0.x/templates/
-
-### Example Inputs:
-- Resource: {{ resource }}
-- Method: {{ method }}
+{{description}}

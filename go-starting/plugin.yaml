@@ -9,7 +9,7 @@ metadata:
 spec:
   type: app
   compatibility:
-    - python
+    - go
   docs:
     pt-br: docs/pt-br/docs.md
     en-us: docs/en-us/docs.md
@@ -19,22 +19,12 @@ spec:
     - Api
   stk-projects-only: false
   inputs:
-    - label: Type name of your resource
-      name: resource
+    - label: Project name
+      type: text
+      name: project_name
+      default: project-name
+      pattern: '([A-Z][a-z\-]+)+'
+    - label: Description
+      name: description
       type: text
       required: true
-      default: Client
-      pattern: '([A-Z][a-z]+)+'
-      help: 'Inform your resource name (e.g.: Client)'
-    - label: Choose http method of new endpoint
-      name: method
-      type: text
-      items:
-        - GET
-        - POST
-        - PUT
-        - DELETE
-        - PATCH
-      default: GET
-      required: true
-      help: 'Inform the method of the endpoint (e.g.: post or delete)'
