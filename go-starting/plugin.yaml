@@ -23,7 +23,7 @@ spec:
       type: text
       name: project_name
       default: project-name
-      pattern: '([A-Z][a-z\-]+)+'
+      pattern: '([A-Za-z\-]+)+'
     - label: Description
       name: description
       type: text
