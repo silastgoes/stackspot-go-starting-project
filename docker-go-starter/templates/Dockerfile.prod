@@ -1,0 +1,20 @@
+FROM golang:{{go_version}} as build
+
+WORKDIR go/src/{{project_path}}/cmd/{{project_name}}
+
+COPY build go/src/{{project_path}}/build
+COPY cmd go/src/{{project_path}}/cmd
+COPY internal go/src/{{project_path}}/internal
+COPY pkg go/src/{{project_path}}/pkg
+COPY config go/src/{{project_path}}/config
+COPY .env go/src/{{project_path}}/.env
+
+RUN CGO_ENABLED=0 GOOS=linux go build -a -o {{project_name}}
+
+FROM gcr.io/distroless/base
+
+COPY --from=build /go/src/{{project_name}}/{{project_name}} /{{project_name}}
+COPY --from=build /go/src/{{project_name}}/.env /go/src/.env
+
+EXPOSE {{project_port}}
+CMD ["{{project_name}}"]

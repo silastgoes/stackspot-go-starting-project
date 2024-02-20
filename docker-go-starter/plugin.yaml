@@ -19,22 +19,22 @@ spec:
     - Api
   stk-projects-only: false
   inputs:
-    - label: Type name of your resource
-      name: resource
+    - label: Project Name
       type: text
-      required: true
-      default: Client
-      pattern: '([A-Z][a-z]+)+'
-      help: 'Inform your resource name (e.g.: Client)'
-    - label: Choose http method of new endpoint
-      name: method
+      name: project_name
+      default: project-name
+      pattern: '([A-Za-z\-]+)+'
+    - label: Project Path
       type: text
-      items:
-        - GET
-        - POST
-        - PUT
-        - DELETE
-        - PATCH
-      default: GET
+      name: project_path
+      default: project-path
+    - label: Description
+      name: go_version
+      type: text
+      default: 1.21.5
+      pattern: '([0-9\.]+)+'
       required: true
-      help: 'Inform the method of the endpoint (e.g.: post or delete)'
+    - label: Porject Port 
+      name: project_port
+      type: int 
+      default: 5050
